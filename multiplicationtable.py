@@ -34,4 +34,3 @@ while num4<=10:
     totalsum += num4
     num4 += 1
 print(totalsum)
-
