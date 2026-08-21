@@ -10,7 +10,7 @@ class playlist:
     def delete(self,song):
         self.mysongs.remove(song)
 
-    def display(self,mysongs):
+    def display(self):
         print(mysongs)
 
 
