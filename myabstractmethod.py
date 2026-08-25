@@ -17,14 +17,14 @@ class dog(animal):
         super().__init__(name, habitat)
         self.breed=breed
     def sound(self):
-        print("A dog says woof.")
+        print(self.breed,". A dog says woof.")
 
 class bird(animal):
     def __init__(self, name, habitat,breed):
             super().__init__(name, habitat)
             self.breed=breed
     def sound(self):
-        print(self.breed,"A bird says tweet.")
+        print(self.breed,". A bird says tweet.")
 
 
 class cow(animal):
@@ -32,7 +32,7 @@ class cow(animal):
             super().__init__(name, habitat)
             self.breed=breed
     def sound(self):
-        print("A cow says moo.")
+        print(self.breed,". A cow says moo.")
 
 
 
@@ -40,6 +40,6 @@ d=dog("Happy","House","Golden Retriever")
 b=bird("Peggy","sky","parrot")
 c=cow("Agatha","grasslands","brown cow")
 
-for a in [dog,bird,cow]:
+for a in [d,b,c]:
      a.sound()
      a.display()
