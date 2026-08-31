@@ -1,0 +1,3 @@
+Hello!
+I have just created a new txt file using python!
+It can do the same things as the first file but this one just creates the file automatically!
