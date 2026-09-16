@@ -14,8 +14,6 @@ pic=ImageTk.PhotoImage(pic)
 p=Label(window, image=pic)
 p.pack()
 
-bu=Button(window,text="Click me!",command=topwin)
-bu.pack()
 
 def topwin():
     top=Toplevel()
@@ -23,37 +21,34 @@ def topwin():
     top.geometry("400x380")
 
     a= Label(top,text="Write the money you have:")
-    a.pack()
+    a.grid(row=0,column=0,columnspan=2,padx=20,pady=10)
     b=Entry(top)
-    b.pack()
+    b.grid(row=0,column=1,columnspan=2,padx=20,pady=10)
 
 
     c=Label(top,text="------------------------------------------------------")
-    c.pack()
+    c.grid(row=1,column=0,columnspan=2,padx=20,pady=10)
 
 
     d=Label(top,text="No. of 500 notes:")
-    d.grid(row=0,column=0,columnspan=2,padx=20,pady=10)
+    d.grid(row=2,column=0,columnspan=2,padx=20,pady=10)
     e=Entry(top)
-    e.grid(row=0,column=1,columnspan=2,padx=20,pady=10)
+    e.grid(row=2,column=1,columnspan=2,padx=20,pady=10)
 
     f=Label(top,text="No. of 100 notes:")
-    f.grid(row=1,column=0,columnspan=2,padx=20,pady=10)
+    f.grid(row=3,column=0,columnspan=2,padx=20,pady=10)
     g=Entry(top)
-    g.grid(row=1,column=1,columnspan=2,padx=20,pady=10)
+    g.grid(row=3,column=1,columnspan=2,padx=20,pady=10)
 
     h=Label(top,text="No. of 50 notes:")
-    h.grid(row=2,column=0,columnspan=2,padx=20,pady=10)
+    h.grid(row=4,column=0,columnspan=2,padx=20,pady=10)
     i=Entry(top)
-    i.grid(row=2,column=1,columnspan=2,padx=20,pady=10)
-
-    j=Button(top,text="Click me to calculate!!!",command=clc)
-    j.pack()
+    i.grid(row=4,column=1,columnspan=2,padx=20,pady=10)
 
     def clc():
         try:
             global amount
-            amount=b.get()
+            amount=int(b.get())
             a1=amount//500
             amount %= 500
             a2=amount//100
@@ -70,6 +65,12 @@ def topwin():
             i.insert(END,str(a3))
         except ValueError:
             messagebox.showerror('Enter a normal value please')
+            
+    j=Button(top,text="Click me to calculate!!!",command=clc)
+    j.grid(row=5,column=0,columnspan=2,padx=20,pady=10)
+
     top.mainloop()
 
+bu=Button(window,text="Click me!",command=topwin)
+bu.pack()
 window.mainloop()
